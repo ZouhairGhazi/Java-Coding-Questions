@@ -8,7 +8,7 @@ public class Solution {
 
         int n = nums.size();
         if (n % 2 == 0)
-            throw new IllegalArgumentException("The array's length can't be pair");
+            throw new IllegalArgumentException("The array's length should not be a pair number");
 
         int sumL = 0, sumR = nums.stream().mapToInt(Integer::intValue).sum() - nums.get(0);
 
