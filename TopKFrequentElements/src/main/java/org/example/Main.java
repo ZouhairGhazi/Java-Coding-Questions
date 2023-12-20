@@ -9,7 +9,7 @@ public class Main {
         int[] nums = {1,1,1,2,2,3,3};
         int k = 2;
 
-        // Expected answer : 4, head to src/main/test/SolutionTest.java for more UTs
+        // Expected answer : [1, 3], head to src/main/test/SolutionTest.java for more UTs
         System.out.println(k + " most occurent elements are : " + Arrays.toString(Solution.topKFrequent(nums, k)));
     }
 }
