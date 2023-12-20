@@ -5,14 +5,11 @@ import java.util.List;
 
 public class Solution {
 
-    private static int findMaxDepth(List<List<Integer>> graph, int node, boolean[] visited) {
-        visited[node] = true;
+    private static int findMaxDepth(List<List<Integer>> graph, int node) {
         int depth = 0;
 
         for (int neighbor : graph.get(node)) {
-            if (!visited[neighbor]) {
-                depth = Math.max(depth, findMaxDepth(graph, neighbor, visited));
-            }
+            depth = Math.max(depth, findMaxDepth(graph, neighbor));
         }
 
         return depth + 1;
@@ -37,8 +34,7 @@ public class Solution {
         int maxDepth = 0;
         for (int i = 0; i < n; i++) {
             if (predators.get(i) == -1) { // start from the roots
-                boolean[] visited = new boolean[n];
-                maxDepth = Math.max(maxDepth, findMaxDepth(graph, i, visited));
+                maxDepth = Math.max(maxDepth, findMaxDepth(graph, i));
             }
         }
 
