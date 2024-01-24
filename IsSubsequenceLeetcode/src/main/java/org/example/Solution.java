@@ -1,6 +1,7 @@
 package org.example;
 
-public class Solution {
+public class Solution{
+
     public static boolean isSubsequence(String s, String t) {
 
         int counterS = 0;
