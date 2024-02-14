@@ -197,4 +197,28 @@ public class Solution {
                 .skip(1)
                 .findFirst();
     }
+
+    /**
+     * returns the intersection between 2 List<Integer>
+     *
+     * @param nums1, nums2 lists of Integers
+     * @return List<Integer>
+     */
+    public static List<Integer> findIntersection(List<Integer> nums1, List<Integer> nums2) {
+        return nums1.stream()
+                .filter(nums2::contains)
+                .toList();
+    }
+
+    /**
+     * returns the list of strings that contains the letter A
+     *
+     * @param stringList a list of Strings
+     * @return List<String>
+     */
+    public static List<String> checkForElementsContainingA(List<String> stringList) {
+        return stringList.stream()
+                .filter(x -> x.contains("A"))
+                .toList();
+    }
 }

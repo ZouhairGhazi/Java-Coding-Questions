@@ -282,4 +282,40 @@ class SolutionTest {
             assertEquals(answer, Solution.findSecondSmallestElement(Arrays.asList(1, 1, 3, 4, 5)));
         }
     }
+
+    @Nested
+    class FindIntersectionTests {
+
+        // Standard test case, intersection exists
+        @Test
+        void find_intersection_true() {
+            List<Integer> answer = List.of(1, 2, 3); // Expected answer
+            assertEquals(answer, Solution.findIntersection(Arrays.asList(1, 2, 3, 4, 5), Arrays.asList(1, 2, 3, 7, 8)));
+        }
+
+        // Standard test case, intersection exists
+        @Test
+        void find_intersection_false() {
+            List<Integer> answer = List.of(); // Expected answer
+            assertEquals(answer, Solution.findIntersection(Arrays.asList(1, 2, 3), Arrays.asList(4, 7, 8)));
+        }
+    }
+
+    @Nested
+    class CheckForElementsContainingATests {
+
+        // Standard test case, many strings containing A
+        @Test
+        void check_elements_when_exist() {
+            List<String> answer = Arrays.asList("TATA", "TITA"); // Expected answer
+            assertEquals(answer, Solution.checkForElementsContainingA(Arrays.asList("TATA", "TITA", "TUTU")));
+        }
+
+        // Standard test case, many strings containing A
+        @Test
+        void check_elements_when_none_exist() {
+            List<String> answer = List.of(); // Expected answer
+            assertEquals(answer, Solution.checkForElementsContainingA(Arrays.asList("TETE", "TITI", "TUTU")));
+        }
+    }
 }

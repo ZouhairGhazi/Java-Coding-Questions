@@ -63,6 +63,12 @@ public class Main {
         Optional<Integer> result15 = Solution.findSecondSmallestElement(Arrays.asList(2, 10, 4, 5));
         System.out.println(result15.orElse(0)); // Expected answer : 4, head to src/main/test/SolutionTest.java for more UTs
 
+        List<Integer> result16 = Solution.findIntersection(Arrays.asList(1, 2, 3, 4, 5), Arrays.asList(4, 5, 6, 7, 8));
+        System.out.println(result16); // Expected answer : [4, 5], head to src/main/test/SolutionTest.java for more UTs
+
+        List<String> result17 = Solution.checkForElementsContainingA(Arrays.asList("tAtA", "tAtat", "tatata", "titi", "totoA"));
+        System.out.println(result17); // Expected answer : [tAtA, tAtat, totoA], head to src/main/test/SolutionTest.java for more UTs
+
     }
 
 }
