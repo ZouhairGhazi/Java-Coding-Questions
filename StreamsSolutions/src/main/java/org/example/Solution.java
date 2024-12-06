@@ -3,6 +3,8 @@ package org.example;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.*;
+
 public class Solution {
 
     /**
@@ -180,8 +182,8 @@ public class Solution {
      */
     public static List<Integer> findMaximumSalaryPerDepartment(List<Employee> employees) {
         return employees.stream()
-                .collect(Collectors.groupingBy(Employee::getDepartment, Collectors.mapping(Employee::getSalary,
-                        Collectors.maxBy(Comparator.naturalOrder()))))
+                .collect(groupingBy(Employee::getDepartment, mapping(Employee::getSalary,
+                        maxBy(Comparator.naturalOrder()))))
                 .values().stream().map(maxSalary -> maxSalary.orElse(null)).toList();
     }
 
@@ -220,5 +222,11 @@ public class Solution {
         return stringList.stream()
                 .filter(x -> x.contains("A"))
                 .toList();
+    }
+
+    public static int getSumMatrix(int[][] matrix) {
+        return Arrays.stream(matrix)
+                .flatMapToInt(Arrays::stream)
+                .sum();
     }
 }

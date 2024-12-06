@@ -69,6 +69,12 @@ public class Main {
         List<String> result17 = Solution.checkForElementsContainingA(Arrays.asList("tAtA", "tAtat", "tatata", "titi", "totoA"));
         System.out.println(result17); // Expected answer : [tAtA, tAtat, totoA], head to src/main/test/SolutionTest.java for more UTs
 
+        int[][] matrix = {
+                {1, 2, 3},
+                {0, 0, 0},
+                {0, 0, 0}
+        };
+        System.out.println(Solution.getSumMatrix(matrix));
     }
 
 }
